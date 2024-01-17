@@ -35,10 +35,11 @@ local Translations = {
         deliver = "Entregar produtos",
     }
 }
-if GetConvar('qb_locale', 'en') == 'pt' then
+
+Locale:registerLocale(false, 'pt', function()
     Lang = Locale:new({
         phrases = Translations,
         warnOnMissing = true,
         fallbackLang = Lang,
     })
-end
+end)
